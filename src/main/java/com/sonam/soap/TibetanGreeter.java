@@ -5,14 +5,19 @@ import org.slf4j.LoggerFactory;
 
 public class TibetanGreeter implements Greeter {
 
-    private Logger logger = LoggerFactory.getLogger( getClass( ) );
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
-    public String greetMe( String name ) {
-        logger.debug( "Tashi Delek, '{}'", name );
-        return "Tashi Delek, " + name;
+    public String greetMe(String name) {
+	logger.debug("Tashi Delek, '{}'", name);
+	return "Tashi Delek, " + name;
     }
 
-    public String bye( ) {
-        return "good bye";
+    public String bye() {
+	return "good bye";
+    }
+
+    public void throwException(String message) {
+	logger.debug("throwing a RuntimeException with message {}", message);
+	throw new RuntimeException(message);
     }
 }
